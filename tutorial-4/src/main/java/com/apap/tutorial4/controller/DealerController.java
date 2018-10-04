@@ -1,5 +1,6 @@
 package com.apap.tutorial4.controller;
 
+import java.util.Collections;
 import java.util.List;
 import com.apap.tutorial4.model.*;
 import com.apap.tutorial4.service.*;
@@ -46,6 +47,7 @@ public class DealerController {
 		if (dealerService.getDealerDetailById(id).isPresent()) {
 			dealer = dealerService.getDealerDetailById(id).get();
 			listCar = dealer.getListCar();
+			Collections.sort(listCar);
 		}
 		model.addAttribute("dealer", dealer);
 		model.addAttribute("listCar", listCar);

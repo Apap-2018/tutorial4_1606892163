@@ -15,7 +15,7 @@ import org.hibernate.annotations.OnDeleteAction;
  */
 @Entity
 @Table(name = "car")
-public class CarModel implements Serializable {
+public class CarModel implements Serializable, Comparable<CarModel> {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -90,5 +90,10 @@ public class CarModel implements Serializable {
 
 	public void setDealer(DealerModel dealer) {
 		this.dealer = dealer;
+	}
+	
+	@Override
+	public int compareTo(CarModel other) {
+		return (this.price - other.getPrice());
 	}
 }

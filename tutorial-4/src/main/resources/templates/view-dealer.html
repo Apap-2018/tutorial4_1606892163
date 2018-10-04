@@ -11,10 +11,10 @@
 		<br>
 		<table>
 			<tr>
-				<td>Brand</td>
-				<td>Type</td>
-				<td>Price</td>
-				<td>Amount</td>
+				<th>Brand</th>
+				<th>Type</th>
+				<th>Price</th>
+				<th>Amount</th>
 			</tr>
 			<div th:each="car : ${listCar}">
 				<tr>
@@ -24,8 +24,6 @@
 					<td th:text="${car.amount}"></td>
 				</tr>
 			</div>
-			
 		</table>
-		
 	</body>
 </html>
