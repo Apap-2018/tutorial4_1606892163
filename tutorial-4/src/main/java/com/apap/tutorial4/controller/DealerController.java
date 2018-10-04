@@ -64,4 +64,10 @@ public class DealerController {
 		}
 		return "view-allDealer";
 	}
+	
+	@RequestMapping(value = "/dealer/delete/{dealerId}", method = RequestMethod.GET)
+	private String deleteDealerById(@PathVariable(value = "dealerId") Long id) {
+		dealerService.deleteById(id);
+		return "delete";
+	}
 }

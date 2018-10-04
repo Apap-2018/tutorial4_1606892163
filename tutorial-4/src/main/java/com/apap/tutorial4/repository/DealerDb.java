@@ -13,4 +13,6 @@ import java.util.List;
 @Repository
 public interface DealerDb extends JpaRepository<DealerModel, Long> {
 	List<DealerModel> findAll();
+	
+	void delete(DealerModel dealer);
 }

@@ -35,4 +35,9 @@ public class DealerServiceImpl implements DealerService {
 	public List<DealerModel> getListDealer() {
 		return dealerDb.findAll();
 	}
+	
+	@Override
+	public void deleteById(Long id) {
+		dealerDb.delete(this.getDealerDetailById(id).get());
+	}
 }
