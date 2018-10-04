@@ -40,4 +40,11 @@ public class DealerServiceImpl implements DealerService {
 	public void deleteById(Long id) {
 		dealerDb.delete(this.getDealerDetailById(id).get());
 	}
+	
+	@Override
+	public void updateById(Long id, DealerModel dealerNew) {
+		DealerModel dealerOld = this.getDealerDetailById(id).get();
+		dealerOld.setAlamat(dealerNew.getAlamat());
+		dealerOld.setNoTelp(dealerNew.getNoTelp());
+	}
 }

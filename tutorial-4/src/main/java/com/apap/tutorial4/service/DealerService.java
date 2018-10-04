@@ -17,4 +17,6 @@ public interface DealerService {
 	List<DealerModel> getListDealer();
 	
 	void deleteById(Long id);
+	
+	void updateById(Long id, DealerModel dealerNew);
 }
