@@ -15,6 +15,7 @@
 				<th>Type</th>
 				<th>Price</th>
 				<th>Amount</th>
+				<th>Delete</th>
 			</tr>
 			<div th:each="car : ${listCar}">
 				<tr>
@@ -22,6 +23,9 @@
 					<td th:text="${car.type}"></td>
 					<td th:text="${car.price}"></td>
 					<td th:text="${car.amount}"></td>
+					<td>
+						<a th:href="@{/car/delete/{id}(id=${car.id})}">Delete Car</a>
+					</td>
 				</tr>
 			</div>
 		</table>

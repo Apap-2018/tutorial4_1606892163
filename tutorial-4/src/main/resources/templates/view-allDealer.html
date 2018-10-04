@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>View All Dealer</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Alamat</th>
+				<th>No Telp</th>
+				<th></th>
+			</tr>
+			<div th:each="dealer : ${listDealer}">
+				<tr>
+					<td th:text="${dealer.id}"></td>
+					<td th:text="${dealer.alamat}"></td>
+					<td th:text="${dealer.noTelp}"></td>
+					<td></td>
+				</tr>
+			</div>
+		</table>
+	</body>
+</html>

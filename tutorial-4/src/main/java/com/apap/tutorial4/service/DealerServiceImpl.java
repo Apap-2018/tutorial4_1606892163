@@ -1,6 +1,7 @@
 package com.apap.tutorial4.service;
 
 import java.util.Optional;
+import java.util.List;
 
 import com.apap.tutorial4.model.DealerModel;
 import com.apap.tutorial4.repository.DealerDb;
@@ -28,5 +29,10 @@ public class DealerServiceImpl implements DealerService {
 	@Override
 	public void addDealer(DealerModel dealer) {
 		dealerDb.save(dealer);
+	}
+	
+	@Override 
+	public List<DealerModel> getListDealer() {
+		return dealerDb.findAll();
 	}
 }

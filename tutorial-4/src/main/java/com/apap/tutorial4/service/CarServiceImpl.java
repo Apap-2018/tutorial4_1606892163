@@ -1,6 +1,7 @@
 package com.apap.tutorial4.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.apap.tutorial4.model.CarModel;
 import com.apap.tutorial4.repository.CarDb;
@@ -21,7 +22,17 @@ public class CarServiceImpl implements CarService {
  private CarDb carDb;
  
  @Override
+ public Optional<CarModel> getDetailCarById(Long id) {
+	 return carDb.findById(id);
+ }
+ 
+ @Override
  public void addCar(CarModel car) {
 	 carDb.save(car);
+ }
+ 
+ @Override
+ public void deleteCarById(Long id) {
+	 carDb.delete(this.getDetailCarById(id).get());
  }
 }

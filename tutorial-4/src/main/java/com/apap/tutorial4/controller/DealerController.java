@@ -53,4 +53,15 @@ public class DealerController {
 		model.addAttribute("listCar", listCar);
 		return "view-dealer";
 	}
+	
+	@RequestMapping(value = "/dealer/view-all")
+	private String viewAllDealer(Model model) {
+		List<DealerModel> listDealer = null;
+		
+		if (!dealerService.getListDealer().isEmpty()) {
+			listDealer = dealerService.getListDealer();
+			model.addAttribute("listDealer", listDealer);
+		}
+		return "view-allDealer";
+	}
 }
