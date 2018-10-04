@@ -40,8 +40,15 @@ public class DealerController {
 	
 	@RequestMapping(value = "/dealer/view", method = RequestMethod.GET)
 	private String viewDealerById(@RequestParam(value = "dealerId", required = true) Long id, Model model) {
-		DealerModel dealer = dealerService.getDealerDetailById(id).get();
+		DealerModel dealer = null;
+		List<CarModel> listCar = null;
+		
+		if (dealerService.getDealerDetailById(id).isPresent()) {
+			dealer = dealerService.getDealerDetailById(id).get();
+			listCar = dealer.getListCar();
+		}
 		model.addAttribute("dealer", dealer);
+		model.addAttribute("listCar", listCar);
 		return "view-dealer";
 	}
 }

@@ -7,5 +7,25 @@
 		<h3 th:text="'Alamat: ' + ${dealer.alamat}"></h3>
 		<h3 th:text="'Telepon: ' + ${dealer.noTelp}"></h3>
 		<a th:href="@{/car/add/{id}(id=${dealer.id})}">Add car</a>
+		<br>
+		<br>
+		<table>
+			<tr>
+				<td>Brand</td>
+				<td>Type</td>
+				<td>Price</td>
+				<td>Amount</td>
+			</tr>
+			<div th:each="car : ${listCar}">
+				<tr>
+					<td th:text="${car.brand}"></td>
+					<td th:text="${car.type}"></td>
+					<td th:text="${car.price}"></td>
+					<td th:text="${car.amount}"></td>
+				</tr>
+			</div>
+			
+		</table>
+		
 	</body>
 </html>
