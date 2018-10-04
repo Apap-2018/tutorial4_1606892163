@@ -26,6 +26,8 @@ public class CarServiceImpl implements CarService {
 	 return carDb.findById(id);
  }
  
+ 
+ 
  @Override
  public void addCar(CarModel car) {
 	 carDb.save(car);
@@ -34,5 +36,14 @@ public class CarServiceImpl implements CarService {
  @Override
  public void deleteCarById(Long id) {
 	 carDb.delete(this.getDetailCarById(id).get());
+ }
+ 
+ @Override
+ public void updateCar(Long id, CarModel carNew) {
+	 CarModel carOld = this.getDetailCarById(id).get();
+	 carOld.setBrand(carNew.getBrand());
+	 carOld.setType(carNew.getType());
+	 carOld.setPrice(carNew.getPrice());
+	 carOld.setAmount(carNew.getAmount());
  }
 }

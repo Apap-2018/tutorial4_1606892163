@@ -10,6 +10,7 @@
 				<th>Alamat</th>
 				<th>No Telp</th>
 				<th>Delete</th>
+				<th>Update</th>
 			</tr>
 			<div th:each="dealer : ${listDealer}">
 				<tr>
@@ -19,6 +20,7 @@
 					<td>
 						<a th:href="@{/dealer/delete/{id}(id=${dealer.id})}">Delete Dealer</a>
 					</td>
+					<td></td>
 				</tr>
 			</div>
 		</table>

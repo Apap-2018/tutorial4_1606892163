@@ -16,6 +16,7 @@
 				<th>Price</th>
 				<th>Amount</th>
 				<th>Delete</th>
+				<th>Update</th>
 			</tr>
 			<div th:each="car : ${listCar}">
 				<tr>
@@ -25,6 +26,9 @@
 					<td th:text="${car.amount}"></td>
 					<td>
 						<a th:href="@{/car/delete/{id}(id=${car.id})}">Delete Car</a>
+					</td>
+					<td>
+						<a th:href="@{/car/update/{id}(id=${car.id})}">Update Car</a>
 					</td>
 				</tr>
 			</div>
